@@ -1,0 +1,92 @@
+[gd_scene load_steps=7 format=3 uid="uid://cyt3d4snpcacn"]
+
+[ext_resource type="Theme" uid="uid://c5laufxlkt1dt" path="res://Themes/ProtagDialogBox.tres" id="1_ewnsd"]
+[ext_resource type="Script" uid="uid://40rwu2uubyix" path="res://scripts/dialog.gd" id="2_p47hq"]
+[ext_resource type="PackedScene" uid="uid://b5q8k5ycd2s6f" path="res://protag.tscn" id="2_ucd2t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ucd2t"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ewnsd"]
+bg_color = Color(0.156863, 0.607843, 0.168627, 0.627451)
+corner_radius_top_right = 50
+corner_detail = 9
+
+[sub_resource type="LabelSettings" id="LabelSettings_ucd2t"]
+font_size = 22
+
+[node name="Dialog UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ewnsd")
+script = ExtResource("2_p47hq")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -801.0
+offset_top = -150.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_ucd2t")
+
+[node name="Protag" parent="PanelContainer" instance=ExtResource("2_ucd2t")]
+position = Vector2(697, -99)
+scale = Vector2(2, 2)
+
+[node name="DialogBox" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -154.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="DialogText" type="RichTextLabel" parent="DialogBox"]
+unique_name_in_owner = true
+z_index = 100
+layout_mode = 2
+bbcode_enabled = true
+text = "This is [i]some[/i] [b]sample[/b] text.
+[wave]Spooky[/wave]
+[shake]Creepy[/shake]
+[url={\"key\": \"value\"}]Text[/url]"
+
+[node name="Speakerbox" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -203.7
+offset_right = 199.0
+offset_bottom = -153.7
+grow_vertical = 0
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_ewnsd")
+
+[node name="SpeakerText" type="Label" parent="Speakerbox"]
+unique_name_in_owner = true
+z_index = 1
+layout_mode = 2
+mouse_filter = 1
+text = "Name Goes Here"
+label_settings = SubResource("LabelSettings_ucd2t")
+
+[connection signal="meta_clicked" from="DialogBox/DialogText" to="." method="_on_dialog_text_meta_clicked"]

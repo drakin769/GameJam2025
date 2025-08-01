@@ -1,0 +1,14 @@
+{
+	"first":{
+		"speaker":{
+			"narator"
+		},
+		"flags":[
+			"start"
+		],
+		"text":{
+			"You awake from a [wavy]terrible dream.[/wavy]
+			[u][url=FirstClick]Continue[/u][/url]
+		"}
+	}
+}
