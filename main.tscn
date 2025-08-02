@@ -1,13 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://sweauu4o5a3l"]
+[gd_scene load_steps=9 format=3 uid="uid://sweauu4o5a3l"]
 
 [ext_resource type="Script" uid="uid://blhl3wl4m4pgh" path="res://scripts/main.gd" id="1_h2yge"]
 [ext_resource type="Texture2D" uid="uid://bn2ycl12lhnig" path="res://Assets/Placeholder-BackGround.png" id="1_ig7tw"]
-[ext_resource type="Script" uid="uid://cdpjlgajv0vjx" path="res://text_signal_trier.gd" id="3_5vw27"]
 [ext_resource type="PackedScene" uid="uid://cyt3d4snpcacn" path="res://dialog_ui.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dka188l04khpq" path="res://addons/dice_roller/dice_roller_control/dice_roller_control.tscn" id="4_1bvp3"]
 [ext_resource type="Script" uid="uid://cohd4ovwrydr0" path="res://addons/dice_roller/dice_def.gd" id="5_7mycd"]
 [ext_resource type="Script" uid="uid://xsgh2gwr4gub" path="res://addons/dice_roller/dice_shape.gd" id="6_272bh"]
-[ext_resource type="PackedScene" uid="uid://wn0erkq5ei5j" path="res://TypyText.tscn" id="7_272bh"]
 
 [sub_resource type="Resource" id="Resource_5vw27"]
 script = ExtResource("6_272bh")
@@ -56,20 +54,6 @@ anchors_preset = 12
 anchor_top = 1.0
 grow_vertical = 0
 
-[node name="TypyText" parent="Forground" instance=ExtResource("7_272bh")]
-offset_left = 214.0
-offset_top = 519.0
-offset_right = -334.0
-offset_bottom = -17.0
-
-[node name="Button" type="Button" parent="Forground"]
-offset_left = 214.0
-offset_top = 462.0
-offset_right = 435.0
-offset_bottom = 510.0
-text = "Try Dot Matrix Text!!"
-script = ExtResource("3_5vw27")
-
 [node name="DiceRollerControl" parent="Forground" instance=ExtResource("4_1bvp3")]
 offset_left = 480.0
 offset_top = 467.0
@@ -78,5 +62,3 @@ offset_bottom = 587.0
 dice_set = Array[ExtResource("5_7mycd")]([SubResource("Resource_kek77")])
 roller_color = Color(0.592157, 0, 0.27451, 1)
 roller_size = Vector3(16, 12, 8)
-
-[connection signal="pressed" from="Forground/Button" to="Forground/Button" method="_on_pressed"]
