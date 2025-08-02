@@ -1,14 +1,63 @@
 {
 	"first":{
+<<<<<<< HEAD
 		"speaker":{
 			"narrator"
 		},
 		"flags":[
 			"start"
+=======
+		"speaker":"Narrator"
+		,
+		"version":0
+		,
+		"text":[
+			"You awake from a [wave]terrible dream.[/wave]\n [url=first]Check Again[/url]\n [url=second]Continue[/url]","You have witnessed this again\n[url=second]Continue[/url]"
+>>>>>>> c8bc25e (Big Update: Core mechanics now work and will enable interactions to chain. Moved most of the script from main to Dialog.gd to solve some scope issue easier.)
 		],
-		"text":{
-			"You awake from a [wavy]terrible dream.[/wavy]
-			[u][url=FirstClick]Continue[/u][/url]
-		"}
+		"change":["first"]
+	},
+	"second":{
+		"speaker":"You"
+		,
+		"version":0
+		,
+		"text":[
+			"I aint got time to sleep around\nTry to [url=Rolltest] Roll the dice![/url]"
+		],
+		"change":[]
+	},
+	"Rolltest":{
+		"DC":10
+	},
+	"RolltestPASS":{
+		"speaker":"Gambler"
+		,
+		"version":0
+		,
+		"text":[
+			"YOU WON!\n[url=Rolltest] Roll the dice again![/url]","YOU WON AGAIN!\n[url=Rolltest] Roll the dice again![/url]"
+		],
+		"change":["RolltestPASS"]
+	},
+	"RolltestFAIL":{
+		"speaker":"Gambler"
+		,
+		"version":0
+		,
+		"text":[
+			"YOU FAILED!\n[url=Rolltest] Roll the dice again![/url]","YOU FAILED AGAIN!\n[url=Rolltest] Roll the dice again![/url]"
+		],
+		"change":["RolltestFAIL"]
+	},
+	"RolltestBOTCH":{
+		"speaker":"Loser"
+		,
+		"version":0
+		,
+		"text":[
+			"YOU REALLY FAILED!\n[url=Rolltest] Roll the dice again![/url]","YOU REALLY FAILED AGAIN!\n[url=Rolltest] Roll the dice again![/url]"
+		],
+		"change":["RolltestBOTCH"]
 	}
 }
