@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgetgmn2723na"]
+
+[ext_resource type="FontFile" uid="uid://cdkh24hggs5t7" path="res://Assets/Tosca.ttf" id="1_8ce8x"]
+
+[node name="Label" type="Label"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -248.0
+offset_top = 11.0
+offset_right = 248.0
+offset_bottom = 212.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(2.83971e-06, 0.764003, 0.448847, 1)
+theme_override_constants/line_spacing = 7
+theme_override_fonts/font = ExtResource("1_8ce8x")
+theme_override_font_sizes/font_size = 49
+text = " Your Fate 
+Is
+Sealed"
+horizontal_alignment = 1
+vertical_alignment = 1
