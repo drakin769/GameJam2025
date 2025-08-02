@@ -1,19 +1,11 @@
 {
 	"first":{
-<<<<<<< HEAD
-		"speaker":{
-			"narrator"
-		},
-		"flags":[
-			"start"
-=======
 		"speaker":"Narrator"
 		,
 		"version":0
 		,
 		"text":[
 			"You awake from a [wave]terrible dream.[/wave]\n [url=first]Check Again[/url]\n [url=second]Continue[/url]","You have witnessed this again\n[url=second]Continue[/url]"
->>>>>>> c8bc25e (Big Update: Core mechanics now work and will enable interactions to chain. Moved most of the script from main to Dialog.gd to solve some scope issue easier.)
 		],
 		"change":["first"]
 	},
